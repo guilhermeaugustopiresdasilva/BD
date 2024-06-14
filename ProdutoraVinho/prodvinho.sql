@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 24/05/2024 às 22:51
--- Versão do servidor: 10.4.32-MariaDB
--- Versão do PHP: 8.0.30
+-- Tempo de geração: 14/06/2024 às 17:45
+-- Versão do servidor: 10.4.28-MariaDB
+-- Versão do PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -60,6 +60,15 @@ CREATE TABLE `produtor` (
   `codregiao` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Despejando dados para a tabela `produtor`
+--
+
+INSERT INTO `produtor` (`produtorid`, `nomeProd`, `moradaProd`, `telefone`, `email`, `codregiao`) VALUES
+(1, 'QT. Vallado', 'Régua', '254323147', 'vallado@mail.telepac.pt', 1),
+(4, 'Dão Sul', NULL, NULL, NULL, 3),
+(6, 'Kolheita Ideais', NULL, NULL, NULL, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -70,6 +79,18 @@ CREATE TABLE `regiao` (
   `idregiao` int(11) NOT NULL,
   `descriregiao` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `regiao`
+--
+
+INSERT INTO `regiao` (`idregiao`, `descriregiao`) VALUES
+(1, 'Dão'),
+(2, 'Alenteijo'),
+(3, 'Douro'),
+(4, 'Etec MCM'),
+(5, 'Fazenda da Etec'),
+(7, 'Fazenda Sul Cíntia');
 
 -- --------------------------------------------------------
 
@@ -139,13 +160,13 @@ ALTER TABLE `casta`
 -- AUTO_INCREMENT de tabela `produtor`
 --
 ALTER TABLE `produtor`
-  MODIFY `produtorid` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `produtorid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de tabela `regiao`
 --
 ALTER TABLE `regiao`
-  MODIFY `idregiao` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idregiao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de tabela `vinho`
